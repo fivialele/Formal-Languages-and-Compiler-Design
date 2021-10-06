@@ -1,0 +1,24 @@
+program = “{” declaration_list list_of_statements “}”
+declaration_list = {declaration}
+declaration = type " " identifier ";"
+
+simple_type = "int" | "boolean" | "char" | "string"
+array_type = “array” " " simple_type “[” positive_integer “]”
+type = simple_type | array_type
+
+list_of_statements = "{" {statement} "}"
+
+statement = simple_statement | structure_statement
+simple_statement = assignment_statement | input_output_statement
+
+assignment_statement = identifier "=" expression ";"
+expression = expression operator term | term
+operator = "+" | "*" | "-" | "/"
+term = identifier | constant
+input_output_statement = ("read" "(" identifier ")") ";" | ("print" "(" expression ")") ";"
+
+structure_statement = if_statement | while_statement
+if_statement = "if" "(" condition ")" list_of_statements ["elif" "(" condition ")" list_of_statements] ["else" list_of_statements]
+while_statement = "while" "(" condition ")" list_of_statements
+condition = (expression logic_operator expression) | boolean_constant
+logic_operator = "<" | "==" | "<=" | ">" | ">=" | "!="

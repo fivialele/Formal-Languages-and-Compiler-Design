@@ -1,0 +1,25 @@
+a. Special symbols
+operators: + - * / < <= > >= ==  and or
+separators: {} [] ; space newline "" ''
+reserved words: while if elif else char int string boolean array read print null true false
+
+b. identifiers
+identifiers = (letter | _){digit | letter | _ }
+nonzerodigit = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+digit = 0 | nonzerodigit
+letter = "A" | "B" | ... | "Z" | "a" | "b" | ... | "z"
+
+c. constants
+constant = int_constant | char_constant | string_constant | boolean_constant
+int_constant = 0 | ([+|-]nonzerodigit{digit})
+
+positive_integer = 0 | nonzerodigit{digit}
+
+char_constant: 'letter' | 'digit' | ' ' | ''
+
+string_constant = "defined_string"
+defined_string = {character}
+
+character = letter | digit | ' '
+
+boolean_constant = "true" | "false"
